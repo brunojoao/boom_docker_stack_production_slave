@@ -28,6 +28,3 @@ services:
       - ./FilesConfigs/Php7/www.conf.default:/usr/local/etc/php-fpm.d/www.conf.default
       - ./FilesConfigs/Php7/zz-docker.conf:/usr/local/etc/php-fpm.d/zz-docker.conf
     command: bash -c "chown -R www-data:1000 /var/www && chmod -R 775 /var/www && php-fpm"
-
-volumes:
-  grafana_storage: {}
