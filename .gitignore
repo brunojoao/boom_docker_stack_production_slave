@@ -1,0 +1,9 @@
+.env
+Projects/*
+!Projects/readme.txt
+FilesConfigs/Dbgate/connections.json
+
+# Jetbrains
+.idea
+FilesConfigs/heimdall/config/log/*
+FilesConfigs/heimdall/config/www/logs/*
