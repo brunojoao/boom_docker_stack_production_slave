@@ -17,21 +17,22 @@ RUN apk update \
         freetype-dev \
         libxml2-dev \
         libzip-dev \
+        imagemagick-dev \
         bash \
         autoconf \
         g++ \
         make \
-		openssh
-
-# Instale extensões do PHP
-RUN docker-php-ext-configure gd --with-freetype --with-jpeg \
-    && docker-php-ext-install -j$(nproc) pdo_mysql gd intl mbstring exif \
-    && docker-php-ext-install -j$(nproc) soap xml zip opcache
+        openssh \
+        bzip2-dev \
+        gmp-dev \
+        openldap-dev \
+    && docker-php-ext-configure gd --with-freetype --with-jpeg \
+    && docker-php-ext-install -j$(nproc) pdo_mysql gd intl mbstring exif bcmath bz2 soap xml zip opcache ldap gmp \
+    && pecl install imagick \
+    && docker-php-ext-enable imagick
 
 # Instale o Composer
 RUN curl --show-error https://getcomposer.org/installer -o /tmp/composer-setup.php \
     && php /tmp/composer-setup.php --install-dir=/usr/local/bin --filename=composer \
     && rm /tmp/composer-setup.php
 
-# Atualize o Composer para a versão 1.x
-RUN composer self-update --1
