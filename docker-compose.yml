@@ -16,7 +16,7 @@ services:
     build:
       context: ./Dockerfiles
       dockerfile: php7
-    image: brunojoao3/boom_docker_stack:php7
+    image: brunojoao3/boom_docker_stack:php7-prod
     user: "root"
     container_name: php7
     restart: always
