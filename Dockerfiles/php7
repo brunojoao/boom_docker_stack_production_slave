@@ -27,7 +27,7 @@ RUN apk update \
         gmp-dev \
         openldap-dev \
     && docker-php-ext-configure gd --with-freetype --with-jpeg \
-    && docker-php-ext-install -j$(nproc) pdo_mysql gd intl mbstring exif bcmath bz2 soap xml zip opcache ldap gmp \
+    && docker-php-ext-install -j$(nproc) pdo_mysql gd intl mbstring exif bcmath bz2 soap xml zip opcache ldap gmp calendar \
     && pecl install imagick \
     && docker-php-ext-enable imagick
 
