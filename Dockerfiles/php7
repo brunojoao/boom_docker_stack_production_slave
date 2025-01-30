@@ -10,6 +10,7 @@ RUN apk update \
         unzip \
         curl \
         git \
+	ffmpeg \
         oniguruma-dev \
         icu-dev \
         libpng-dev \
