@@ -10,6 +10,11 @@ services:
     volumes:
       - ./Projects/app.boomsistemas.com.br:/var/www/app.boomsistemas.com.br
       - ./FilesConfigs/Nginx/nginx.conf:/etc/nginx/nginx.conf
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "100m"
+        max-file: "3"
 
   #port 7001
   php7:
@@ -27,4 +32,10 @@ services:
       - ./FilesConfigs/Php7/www.conf:/usr/local/etc/php-fpm.d/www.conf
       - ./FilesConfigs/Php7/www.conf.default:/usr/local/etc/php-fpm.d/www.conf.default
       - ./FilesConfigs/Php7/zz-docker.conf:/usr/local/etc/php-fpm.d/zz-docker.conf
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "100m"
+        max-file: "3"
     command: bash -c "chown -R www-data:1000 /var/www && chmod -R 775 /var/www && php-fpm"
+
