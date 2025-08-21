@@ -32,6 +32,7 @@ services:
       - ./FilesConfigs/Php7/www.conf:/usr/local/etc/php-fpm.d/www.conf
       - ./FilesConfigs/Php7/www.conf.default:/usr/local/etc/php-fpm.d/www.conf.default
       - ./FilesConfigs/Php7/zz-docker.conf:/usr/local/etc/php-fpm.d/zz-docker.conf
+      - ./logs-php:/var/log/php-fpm
     logging:
       driver: "json-file"
       options:

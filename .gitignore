@@ -2,7 +2,7 @@
 Projects/*
 !Projects/readme.txt
 FilesConfigs/Dbgate/connections.json
-
+logs-php
 # Jetbrains
 .idea
 FilesConfigs/heimdall/config/log/*
