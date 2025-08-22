@@ -26,6 +26,8 @@ services:
     container_name: php7
     restart: always
     network_mode: host
+    cap_add:
+      - SYS_PTRACE
     volumes:
       - ./Projects/app.boomsistemas.com.br:/var/www/app.boomsistemas.com.br
       - ./FilesConfigs/Php7/php.ini:/usr/local/etc/php/conf.d/local.ini
