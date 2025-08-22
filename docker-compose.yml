@@ -13,7 +13,7 @@ services:
     logging:
       driver: "json-file"
       options:
-        max-size: "5m"
+        max-size: "40m"
         max-file: "1"
 
   #port 7001
@@ -38,7 +38,7 @@ services:
     logging:
       driver: "json-file"
       options:
-        max-size: "5m"
+        max-size: "40m"
         max-file: "1"
     command: bash -c "chown www-data:www-data /var/log/php-fpm && chown -R www-data:1000 /var/www && chmod -R 775 /var/www && php-fpm"
 
