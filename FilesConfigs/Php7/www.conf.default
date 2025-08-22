@@ -327,7 +327,7 @@ slowlog = /var/log/php-fpm/www-slow.log
 ; dumped to the 'slowlog' file. A value of '0s' means 'off'.
 ; Available units: s(econds)(default), m(inutes), h(ours), or d(ays)
 ; Default Value: 0
-request_slowlog_timeout = 7
+request_slowlog_timeout = 8
 
 ; Depth of slow log stack trace.
 ; Default Value: 20
@@ -378,7 +378,7 @@ request_terminate_timeout = 180
 ; Note: on highloaded environement, this can cause some delay in the page
 ; process time (several ms).
 ; Default Value: no
-catch_workers_output = yes
+catch_workers_output = no
 
 ; Decorate worker output with prefix and suffix containing information about
 ; the child that writes to the log and if stdout or stderr is used as well as
@@ -434,6 +434,6 @@ catch_workers_output = yes
 ;                specified at startup with the -d argument
 ;php_admin_value[sendmail_path] = /usr/sbin/sendmail -t -i -f www@my.domain.com
 ;php_flag[display_errors] = off
-php_admin_value[error_log] = /var/log/php7/error.log
+php_admin_value[error_log] = /var/log/php-fpm/error.log
 php_admin_flag[log_errors] = on
 php_admin_value[memory_limit] = 2048M
