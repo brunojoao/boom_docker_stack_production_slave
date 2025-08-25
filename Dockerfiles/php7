@@ -32,8 +32,8 @@ RUN apk update \
     && pecl install imagick \
     && docker-php-ext-enable imagick
 
-# Instale o Composer
-RUN curl --show-error https://getcomposer.org/installer -o /tmp/composer-setup.php \
-    && php /tmp/composer-setup.php --install-dir=/usr/local/bin --filename=composer \
-    && rm /tmp/composer-setup.php
-
+# --- Instalação da extensão Redis ---
+# Instala a extensão Redis via PECL
+RUN pecl install redis \
+    && docker-php-ext-enable redis
+# --- Fim da instalação Redis ---
